@@ -1,0 +1,21 @@
+###
+GET http://localhost:3344/bdd/orders/ANATR/1
+###
+GET http://localhost:3344/docs
+
+###
+POST http://localhost:3344/echopost
+Content-Type: application/x-www-form-urlencoded
+
+campo1=campo&fecha=12/03/1988
+
+###
+POST http://localhost:3344/echopostjson?a=1&b=2
+Content-Type: application/json
+
+{"campo":"campojson"}
+###
+POST http://localhost:3344/echopostjson/:300/:13112022/?b=1
+Content-Type: application/json
+
+{"campo":"campojson"}
