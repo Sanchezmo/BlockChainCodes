@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "web3": "^1.8.1"
   }
 }
