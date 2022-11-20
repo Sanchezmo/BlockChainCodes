@@ -1,9 +1,26 @@
-const express = require ('express')
+const express = require('express')
 
 const app = express()
 const fileupload = require("express-fileupload")
 const {Pool} = require('pg')
+const Web3 = require("web3")
+const WEB3_PROVIDER ='https://goerli.infura.io/v3/8e5c4f05377e4613b0a8d0c7511079ba'
+const web3 = new Web3(WEB3_PROVIDER)
+const Minio = require('minio')
 
+app.set("view engine","pug")
+
+app.get('/template1', function (req, res) {
+    res.render("template.pug",{title:"server page pug", message:"estamos en la template"})
+})
+
+const minioCLient= new Minio.Client({
+    endPoint:"localhost",
+    port: 9000,
+    accessKey: "minioadmin",
+    secretKey: "minioadmin",
+    useSSL: false
+})
 const pool =new Pool({
     host: "localhost",
         port: 5432,
@@ -98,5 +115,59 @@ app.post("/uploadficheromultiple",async(req, res)=>{
     res.send("ficheros subiudos")
 })
 
+app.get("/balance/:address", async (req, res) => {
+    try{
+        const balance = await web3.eth.getBalance(req.params.address)
+        res.send(balance)
+    }catch(error){
+        res.status(500).send("error "+error)
+    }
+})
+// MINIOOOO
+app.post("/minio", async (req, res) => {
+    try{
+    await minioCLient.makeBucket(req.params.nombre, 'us-east-1')
+    res.status(200).send({resultado: "ok"})
+    }catch(error){
+        res.status(500).send(error)
+    }
+})
+//falta formulario
+app.post("/minio/addfile", async (req, res) => {
+    try{
+    await minioCLient.putObject(req.body.nombrebu, file.fichero, file.data)
+    res.status(200).send({resultado: "ok"})
+    }catch(error){
+        res.status(500).send(error)
+    }
+})
+app.get("minio/:bucket/:fichero", async (req, res) => {
+    try{
+   const dataStream= await minioCLient.getObject(req.params.bucket,req.params.fichero)
+   dataStream.pipe(res)
+    res.status(200).send({resultado: "ok"})
+    }catch(error){
+        res.status(500).send(error)
+    }
+})
+app.delete("minio/:bucket/:fichero", async (req, res) => {
+    try{
+       await minioCLient.removeObject(req.params.bucket, req.params.fichero)
+    res.status(200).send({resultado: "ok"})
+    }catch(error){
+        res.status(500).send(error)
+    }
+})
+app.get("/error",(req,res) =>{
+    throw new Error("se ha poroducido un error no puedo seguir")
+})
+app.use((error, req, res,next) =>{
+    res.status(500).send(error.message)
+})
+
+app.get("*", (req,res) =>{
+    res.redirect("/404.html")
+    //res.status(404).send("not found")
+})
 app.listen(3344)
 

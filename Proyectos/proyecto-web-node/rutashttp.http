@@ -19,3 +19,10 @@ POST http://localhost:3344/echopostjson/:300/:13112022/?b=1
 Content-Type: application/json
 
 {"campo":"campojson"}
+###
+POST http://localhost:3344/minio/
+Content-Type: application/json
+
+{"nombre": "cursobucket"}
+###
+DELETE http://localhost:3344/minio/curso/fichero.txt
