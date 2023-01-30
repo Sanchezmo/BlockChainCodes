@@ -1,13 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {Routes, Route, BrowserRouter, Outlet} from 'react-router-dom' 
-import { Productos } from '../componentes/Productos'
-import { Home } from '../componentes/home'
-import { Cesta } from '../componentes/Cesta'
-import { Producto } from '../componentes/Producto'
+import { QueryClientProvider,QueryClient } from 'react-query'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Cesta } from '/componentes/Cesta'
+import { Home } from '/componentes/home'
+import { Producto } from '/componentes/Producto'
+import { Productos } from '/componentes/Productos'
+import { Context } from 'react'
+import { createContext } from 'react'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+export const Context = createContext(null)
+
+const queryClient = new QueryClient()
+
+function App(){
+  const [estado, setEstado]= React.useState({
+    cesta: []
+  })
+  return <React.StrictMode>
+    <Context.Provider value={[estado,setEstado]}>
+    <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<Home/>}/>
@@ -18,5 +30,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+    </QueryClientProvider>
+    </Context.Provider>
+  </React.StrictMode>
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App/>
 )
