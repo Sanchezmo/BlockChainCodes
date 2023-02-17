@@ -1,0 +1,30 @@
+=============== Feb 17, 2023 (CET) ===============
+17:03:11.176656 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:11.183136 db@open opening
+17:03:11.185027 version@stat F·[] S·0B[] Sc·[]
+17:03:11.187639 db@janitor F·2 G·0
+17:03:11.187639 db@open done T·4.503ms
+17:03:11.232329 db@close closing
+17:03:11.232985 db@close done T·523.9µs
+=============== Feb 17, 2023 (CET) ===============
+18:51:44.461924 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:51:44.462924 version@stat F·[] S·0B[] Sc·[]
+18:51:44.462924 db@open opening
+18:51:44.462924 journal@recovery F·1
+18:51:44.469010 journal@recovery recovering @1
+18:51:44.473013 memdb@flush created L0@2 N·623 S·52KiB "\x02d\xfc..\x19Ba,v429":"\xfe\x88\xcf..H\xef\xcc,v362"
+18:51:44.480296 version@stat F·[1] S·52KiB[52KiB] Sc·[0.25]
+18:51:44.490355 db@janitor F·3 G·0
+18:51:44.490355 db@open done T·27.4306ms
+18:51:48.312359 db@close closing
+18:51:48.312359 db@close done T·0s
+=============== Feb 17, 2023 (CET) ===============
+18:57:47.046918 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:57:47.047497 version@stat F·[1] S·52KiB[52KiB] Sc·[0.25]
+18:57:47.047497 db@open opening
+18:57:47.048001 journal@recovery F·1
+18:57:47.053516 journal@recovery recovering @3
+18:57:47.057808 memdb@flush created L0@5 N·266 S·11KiB "Dat..ion,v626":"unc..own,v632"
+18:57:47.064959 version@stat F·[2] S·63KiB[63KiB] Sc·[0.50]
+18:57:47.074265 db@janitor F·4 G·0
+18:57:47.074265 db@open done T·26.7678ms
