@@ -1,9 +1,9 @@
-geth --datadir nodo1 --syncmode full --http --http.api admin,eth,miner,net,txpool,personal --http.port 8545 --allow-insecure-unlock --unlock "0xf7b6a1af7743b5ece588206fd473a7223f158cd4" --password pswd.txt --port 30034 --bootnodes "enode://0b6c00d5ff74908252a0d57f86c9dac1d30eb16b1cb8396d030702ec8a9dcb45c27ec339f11918f9f71b638ed89bd91f5dfe64764354dcdc1904e9f8d744d6fd@127.0.0.1:0?discport=30310"
+geth --authrpc.port 8551 --ipcpath "\\. \pipe\geth1.ipc"--datadir nodo1 --syncmode full --http --http.api admin,eth,miner,net,txpool,personal --http.port 8545 --allow-insecure-unlock --unlock "0xf7b6a1af7743b5ece588206fd473a7223f158cd4" --password pswd.txt --port 30034 --bootnodes "enode://0b6c00d5ff74908252a0d57f86c9dac1d30eb16b1cb8396d030702ec8a9dcb45c27ec339f11918f9f71b638ed89bd91f5dfe64764354dcdc1904e9f8d744d6fd@127.0.0.1:0?discport=30310"
 
 geth --authrpc.port 8552 --ipcpath "\\. \pipe\geth2.ipc" --datadir nodo2 --syncmode full --http --http.api admin,eth,miner,net,txpool,personal --http.port 8546 --allow-insecure-unlock --unlock "0x03755258e03e85ab5f3a69c545d6869fdc4fce03" --password pswd.txt --port 30035 --bootnodes "enode://0b6c00d5ff74908252a0d57f86c9dac1d30eb16b1cb8396d030702ec8a9dcb45c27ec339f11918f9f71b638ed89bd91f5dfe64764354dcdc1904e9f8d744d6fd@127.0.0.1:0?discport=30310"
 
 geth --authrpc.port 8553 --ipcpath "\\. \pipe\geth3.ipc" --datadir nodo3 --syncmode full --http --http.api admin,eth,miner,net,txpool,personal --http.port 8547 --allow-insecure-unlock --unlock "0xfef71b184b53af16c7f354de97a38c3e937fc9f9" --password pswd.txt --port 30036 --bootnodes "enode://0b6c00d5ff74908252a0d57f86c9dac1d30eb16b1cb8396d030702ec8a9dcb45c27ec339f11918f9f71b638ed89bd91f5dfe64764354dcdc1904e9f8d744d6fd@127.0.0.1:0?discport=30310"
-
+////////////////////////////////////////////////////////////////
 geth --authrpc.port 8552 --ipcpath "\\. \pipe\geth2.ipc" --datadir nodo2 --http --http.api admin,eth,miner,net,txpool,personal --http.port 8546 --allow-insecure-unlock --unlock "0x03755258e03e85ab5f3a69c545d6869fdc4fce03"
 
 geth --authrpc.port 8553 --ipcpath "\\. \pipe\geth3.ipc" --datadir nodo3 --http --http.api admin,eth,miner,net,txpool,personal --http.port 8547 --allow-insecure-unlock --unlock "0xfef71b184b53af16c7f354de97a38c3e937fc9f9"
