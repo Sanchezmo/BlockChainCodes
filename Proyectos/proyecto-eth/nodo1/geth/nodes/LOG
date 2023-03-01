@@ -4,3 +4,39 @@
 18:42:14.053482 version@stat F·[] S·0B[] Sc·[]
 18:42:14.055484 db@janitor F·2 G·0
 18:42:14.055484 db@open done T·4.3114ms
+=============== Feb 28, 2023 (CET) ===============
+21:56:27.545037 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:56:27.559376 version@stat F·[] S·0B[] Sc·[]
+21:56:27.559376 db@open opening
+21:56:27.559946 journal@recovery F·1
+21:56:27.562948 journal@recovery recovering @1
+21:56:27.567370 memdb@flush created L0@2 N·26 S·413B "loc..seq,v5":"version,v1"
+21:56:27.570984 version@stat F·[1] S·413B[413B] Sc·[0.25]
+21:56:27.582420 db@janitor F·3 G·0
+21:56:27.582928 db@open done T·23.5526ms
+22:11:16.930212 db@close closing
+22:11:16.930720 db@close done T·507.9µs
+=============== Feb 28, 2023 (CET) ===============
+22:12:31.309503 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:12:31.310015 version@stat F·[1] S·413B[413B] Sc·[0.25]
+22:12:31.310015 db@open opening
+22:12:31.310015 journal@recovery F·1
+22:12:31.312689 journal@recovery recovering @3
+22:12:31.319416 memdb@flush created L0@5 N·9 S·293B "loc..seq,v31":"n:\xe4..ail,v29"
+22:12:31.322059 version@stat F·[2] S·706B[706B] Sc·[0.50]
+22:12:31.333499 db@janitor F·4 G·0
+22:12:31.333499 db@open done T·23.4841ms
+22:41:48.226508 db@close closing
+22:41:48.226983 db@close done T·475.2µs
+=============== Feb 28, 2023 (CET) ===============
+22:41:55.633551 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:41:55.633551 version@stat F·[2] S·706B[706B] Sc·[0.50]
+22:41:55.633551 db@open opening
+22:41:55.634151 journal@recovery F·1
+22:41:55.636312 journal@recovery recovering @6
+22:41:55.640056 memdb@flush created L0@8 N·8 S·281B "loc..seq,v41":"n:\xe4..ail,v39"
+22:41:55.642965 version@stat F·[3] S·987B[987B] Sc·[0.75]
+22:41:55.660833 db@janitor F·5 G·0
+22:41:55.660833 db@open done T·27.2814ms
+22:53:48.507456 db@close closing
+22:53:48.507456 db@close done T·0s
